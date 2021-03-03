@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+ {% block title%} <title> Sudam Photography-gallery</title> {% endblock %}
+{% block body %}
+   
+<!-- main -->
+<section class="section-three">
+ <div class="container">
+    <div class="gallery">
+        {% for item in gallery %}
+                <a href="static/{{item.filename}}">
+                    <div class="single-img">
+                        <img src="static/{{item.file}}" alt="">
+                        <div class="single-img-content">
+                            <h3>{{item.category}}</h3>
+                        </div>
+                    </div>
+                </a>   
+        {% endfor %} 
+      </div>       
+     </div>
+ </section>
+    <!-- end of main -->
+    {% endblock  %}
+
+
+  

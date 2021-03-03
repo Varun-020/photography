@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <title> Upload to Gallery</title>
+  </head>
+  <body>
+   
+
+<nav class="navbar navbar-light bg-primary" >
+  <div class="container-fluid">
+    <a class="navbar-brand">{{params['brand_name']}}</a>
+    <span>Add To Gallery</span>
+  </div>
+</nav>
+<!-- form for gallrery-->
+{% with messages=get_flashed_messages()%}
+{% if messages %}
+{% for message in messages %}
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>{{message}}</strong>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endfor %}
+{% endif %}
+{% endwith %}
+<form action="/galleryupload" enctype="multipart/form-data" method='post'>
+  <div  class="mb-3 mx-5">
+    <label for="file here" class="form-label">File</label>
+    <input type="file" class="form-control" id="file" aria-describedby="file help" name="file">
+  </div>
+  <div  class="mb-3 mx-5">
+    <label for="Category" class="form-label">Category</label>
+    <input type="text" class="form-control" id="category" name="category">
+  </div>
+  <button  type="submit" class="btn btn-primary mb-3 mx-5">Submit</button>
+</form>
+
+<a href="/dashboard"><button type="submit" class="btn btn-success mb-3 mx-5">Go To Dashboard</button></a>
+<a href="/logout"><button type="submit" class="btn btn-danger mb-3 mx-5">Log Out</button></a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+  </body>
+</html>
+	

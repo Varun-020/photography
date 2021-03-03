@@ -1,0 +1,79 @@
+{% extends 'layout.html' %}
+ {% block title%} <title> Sudam Photography-contact</title>    {% endblock %}
+{% block body %}
+
+        <!-- main -->
+        <section class = "section-five">
+            <div class = "container">
+                <div class = "contact-top">
+                    <h3>CONTACT ME</h3>
+                    <p>YOU ARE QUITE CLOSE TO HIRE ME , FOR BOOKING CONTACTS FROM ANY ONE GIVEN BELOW</p>
+                </div>
+
+                <div class = "contact-middle">
+                    <div>
+                        <span class = "contact-icon">
+                            <i class = "fas fa-map-signs"></i>
+                        </span>
+                        <span>Address</span>
+                        <p> {{params['address']}}</p>
+                    </div>
+
+                    <div>
+                        <span class = "contact-icon">
+                            <i class = "fas fa-phone"></i>
+                        </span>
+                        <span>Contact Number</span>
+                        <p>  {{params['contact']}}</p>
+                    </div>
+
+                    <div>
+                        <span class = "contact-icon">
+                            <i class = "fas fa-paper-plane"></i>
+                        </span>
+                        <span>Email Address</span>
+                        <p> {{params['email']}}</p>
+                    </div>
+
+                    <div>
+                        <span class = "contact-icon">
+                            <i class = "fas fa-globe"></i>
+                        </span>
+                        <span>Website</span>
+                        <p> {{params['website']}}</p>
+                    </div>
+                </div>
+
+                <div class = "contact-bottom">
+                    <form class = "form" action="/contact" method="post">
+                        <input type = "text"  name="name" placeholder="Your Name">
+                        <input type = "email" name="email"  placeholder="Your Email">
+                        <input type = "text" name="number"  placeholder="Your Contact Number">
+                        <input type = "text"  name="sub" placeholder="Subject">
+                        <textarea rows = "9"  name="message"  placeholder="Message"></textarea>
+                        <button type = "submit"   class = "btn" >Send Message</button>
+                        {% with messages=get_flashed_messages()%}
+{% if messages %}
+{% for message in messages %}
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>{{message}}</strong>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{{message}}
+{% endfor %}
+{% endif %}
+{% endwith %}
+                    </form>
+
+
+                    <!-- Map -->
+                    <div>
+                      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d235321.2140287987!2d85.95311172046394!3d22.843412030917086!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f5ef587ce47431%3A0xb63e80a6b65d88!2sJharkhand%20832108!5e0!3m2!1sen!2sin!4v1612415918036!5m2!1sen!2sin" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end of main -->
+
+
+        {% endblock%}

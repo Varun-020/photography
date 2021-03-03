@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Sudam Photograsphy</title>
+    <meta name="viewport" content="width=device-width, intial-scale=1.0">
+    <link rel="stylesheet" href="static/main.css">
+
+    <script src="https://kit.fontawesome.com/dbed6b6114.js" crossorigin="anonymous"></script>
+ </head>
+
+<body>
+
+    <!-- header -->
+    <header class="header">
+        <div class="nav-section">
+            <div class="brand-and-navBtn">
+                <span class="brand-name">
+                      {{params['brand_name'] }} 
+                    </span>
+                <span class="navBtn flex">
+                        <i class = "fas fa-bars"></i>
+                    </span>
+            </div>
+
+            <!-- navigation menu -->
+            <nav class="top-nav">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/gallery">Gallery</a></li>
+                    <li><a href="/services">Services</a></li>
+                    <li><a href="/blog">Blog</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+        
+        <div class="container about">
+            <div class="about-content">
+               
+                <div class="about-img flex"> 
+                 {% for item in profile %}
+                   {% set fname = item.profilepic %}
+                    <img src="static/{{fname}}" alt="photographer img">
+                 
+                  {% endfor %}
+                </div>
+               
+                <h2>I'm Sudam Tudu</h2>
+                <h3>Photographer | Traveller</h3>
+                <blockquote>
+                    "Photography is a way of feeling, of touching, of loving. What you have caught on film is captured forever ... It remembers little things, long after you have forgotten everything."
+                    <span>-Aaron Siskind</span>
+                </blockquote>
+            </div>
+
+             <div class="social-icons">
+                <ul>
+                    <li>
+                        <a href="{{params['fb_url']}}" target="_blank"><i class = "fab fa-facebook"></i></a>
+                    </li>
+                    <li>
+                        <a href="{{params['tw_url']}}" target="_blank"><i class = "fab fa-twitter"></i></a>
+                    </li>
+                    <li>
+                        <a href="{{params['insta_url']}}" target="_blank"><i class = "fab fa-instagram"></i></a>
+                    </li>
+                   
+            </div>
+        </div>
+       
+    </header>
+    <!-- end of header -->
+
+    <!-- main -->
+    <section class="section-one">
+        <div class="container">
+            <div class="sec-one-left">
+                 <!--image from css-->
+                <div>
+                    <h3>Lorem ipsum dolor sit amet</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos suscipit ut aliquid ab illo. Repellat nam molestias repellendus perspiciatis blanditiis.</p>
+                    <a href="/gallery" class="btn">view all</a>
+                </div>
+            </div>
+
+            <div class="sec-one-right">
+                <div class="work-content">
+                    <h3>AMAZING TEAM WORK WITH PROFESSIONAL PHOTOGRAPHER</h3>
+                    <p>We have collaborations with lots of Photographer and those Professionals are always one step to do the Service .
+                    They work very Professionaly and are always eager to serve their Clients . Here are some of collaboration photoshoot clicks which are way better.</p>
+                    <a href="/gallery" class="btn">view all</a>
+                </div>
+                <div class="work-imgs">
+                    <div class="work-img-1">
+                      <!--image from css-->  
+                    </div>
+                    <div class="work-img-2">
+                       <!--image from css-->
+                    </div>
+                </div>
+                <h3>"Taking an image, freezing a moment, reveals how rich reality truly is."</h3>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-two">
+        <div class="container">
+            <h2>FOLLOW ON INSTAGRAM</h2>
+            <span>@sudam_photography</span>
+            <div class="insta-imgs">
+                <div>
+                    <img src="static/home1.jpg">
+                    <div class="icon-overlay flex">
+                    <a href="/gallery"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <img src="static/naina.jpg">
+                    <div class="icon-overlay flex">
+                    <a href="/gallery"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <img src="static/home6.jpg">
+                    <div class="icon-overlay flex">
+                    <a href="/gallery"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <img src="static/home3.jpg">
+                    <div class="icon-overlay flex">
+                    <a href="/gallery"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end of main -->
+
+
+    <!-- footer -->
+   <footer class="footer">
+        <div class="footer-container container">
+            <div>
+                <h2>Sudam Tudu</h2>
+                <p>“A portrait is not made in the camera but on either side of it.”
+                    “It’s one thing to make a picture of what a person looks like, it’s another thing to make a portrait of who they are.”
+                 I Guarantee the performance of me and my team  to Satisfy the need of Customer.</p>
+            </div>
+            <div>
+                <h3>Hire Me</h3>
+                <p>YOU ARE ONE STEP TO THE BEST PHOTOGRAPHY EXPERIENCE. ENTER MAIL AND CLICK ON HIRE NOW TO EXPERIENCE THE PHOTOSHOOT AS SOON AS POSSIBLE.
+               </p>
+
+                <div class="subs">
+                  <span>Feel Free To Call Me {{params ['contact']}} </span>
+                </div>
+            </div>
+        </div>
+        <p>&copy; Copyright sudam photography 2020-21.</p> <p> Made By:- Varun Mishra +91 8459881535</p>
+    </footer>
+    <!-- end of footer -->
+
+
+    <script src="{{url_for('static',filename='script.js')}}"></script>
+</body>
+
+</html>

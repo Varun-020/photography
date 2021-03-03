@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <title>Edit Posts</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-light bg-primary">
+  <div class="container-fluid">
+    <a href="/posts" class="navbar-brand">Add / Edit Blog Post</a>
+  </div>
+</nav>
+{% with messages=get_flashed_messages()%}
+{% if messages %}
+{% for message in messages %}
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>{{messages}}</strong>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endfor %}
+{% endif %}
+{% endwith %}
+<form action="/posts" method="post" enctype="multipart/form-data">
+	 <div  class="mb-3 mx-5">
+    <label for="Post Badge" class="form-label">Badge</label>
+    <input type="text" placeholder="Badge Here" class="form-control" id="Badge"  name="badge" aria-describedby="badgeHelp">
+  </div>
+  <div  class="mb-3 mx-5">
+    <label for="Post Title" class="form-label">Title</label>
+    <input type="text" placeholder="Title Here" class="form-control" id="title"  name="title" aria-describedby="titleHelp">
+  </div>
+   <div  class="mb-3 mx-5">
+    <label for="Post Title" class="form-label">content</label>
+    <input type="text" class="form-control" placeholder="Write Here" id="content"  name="content" aria-describedby="contentHelp">
+    <div id="ContentHelp" class="form-text">Describe in 20 words</div>
+  </div>
+  <input type="file" class="form-label mb-3 mx-5" name="file">
+  <button type="submit" class="btn btn-primary mb-3 mx-5">Submit</button>
+</form>
+
+
+<table class="table mx-5 ">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Badge</th>
+      <th scope="col">Title</th>
+      <th scope="col">Content</th>
+    </tr>
+  </thead>
+ {% for post in post%}
+  <tbody>
+    <tr>
+      <th scope="row">{{post.slno}}</th>
+      <td>{{post.badge}}</td>
+      <td>{{post.title}}</td>
+      <td>{{post.content}}</td>
+      <td><a href="/delete/{{post.slno}}"><button type="submit" class="btn btn-danger ">Delete Post</button></a></td>
+    </tr>
+  </tbody>
+  {% endfor%}
+</table>
+
+
+<div class="mt-5 mx-5">
+<a href="/dashboard"><button type="submit" class="btn btn-success">Go To Dashboard</button></a>
+<a href="/logout"><button type="submit" class="btn btn-danger mx-5">Log Out</button></a>
+
+<div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+  </body>
+</html>

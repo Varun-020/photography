@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+ {% block title%} <title> Sudam Photography-blog</title>    {% endblock %}
+{% block body %}
+
+       <section class = "section-four">
+        
+            <div class = "container">
+                <div class = "blogs">
+                    <div class = "blog-wrapper-lg">
+                        <!-- single blog post -->
+                        {%for post in post%}
+                        <div class = "blog">
+                            <img src = "static/{{post.img}}">
+                            <div class = "blog-content">
+                                <span class = "badge">{{post.badge}}</span>
+                               
+                                <h3 class = "blog-title" style="color:black; text-align:left;">
+                                    {{post.title}}
+                                </h3>
+                                <p class = "blog-text" style="color:black; text-align:left;">
+                                   {{post.content}}
+                                </p>
+                                 <span class = "misc-info" style="text-align:right;">
+                                    {{post.date}}
+                                </span>
+                            </div>
+                        </div>
+                       {% endfor %}
+                    </div>
+                </div> 
+            </div>
+       
+    </section>
+       {% endblock %}
+
+
+    

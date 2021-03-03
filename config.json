@@ -1,0 +1,22 @@
+{
+  "params":
+  {
+    "local_server":"True",
+    "local_uri": "mysql://root:@localhost/sudamphotography",
+    "prod_uri":"mysql://root:@localhost/sudamphotography",
+    "fb_url":"https://www.facebook.com/SudamPhotography/",
+    "tw_url":"https://twitter.com/Sudamphotograph?s=09",
+    "insta_url": "https://www.instagram.com/Sudam_Photography",
+    "brand_name": "sudamphotography",
+    "gmail-user":"sudamphotography@gmail.com",
+    "gmail-password":"ewtnkvcfxjcjtywi",
+    "login_image":"login.png",
+    "admin_user":"sudamphotography",
+    "address":"Vill- Mirudih po- Gamharia Dist- seraikela-kharsawan Jharkhand 832108",
+    "contact":"+91 8917210343" ,
+    "email":"sudamphotography@gmail.com" ,
+    "website":"www.sudamphotography.com",
+    "upload_location":"C:\\Users\\VARUN MISHRA\\PycharmProjects\\photography\\static"
+  }
+
+}

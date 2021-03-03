@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='dashboard.css')}}">
+</head>
+
+<body>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <title>Admin Dashboard</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-light bg-primary">
+  <div class="container-fluid">
+    <a href="/posts" class="navbar-brand"> Admin Dashboard</a>
+  </div>
+</nav>
+<div class="mt-5 mb-5 mx-5">
+<a href="/posts"><button type="submit" class="btn btn-primary mb-3 mx-5">Add / Delete Post</button></a>
+<a href="/galleryupload"><button type="submit" class="btn btn-primary mb-3 mx-5">Upload In Gallery</button></a>
+<a href="/profilepic"><button type="submit" class="btn btn-primary mb-3 mx-5">Upload Profile Pic</button></a>
+<a href="/"><button type="submit" class="btn btn-primary mb-3 mx-5">Home</button></a>
+<a href="/logout"><button type="submit" class="btn btn-danger mb-3 mx-5">Log Out</button></a>
+<a href="/changepassword"><button type="submit" class="btn btn-success mb-3 mx-5">Change Password</button></a>
+</div>
+<hr>
+<div class="mx-5">All Contacts Here</div>
+<hr>
+<table class="table mx-5 ">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Number</th>
+      <th scope="col">Subject</th>
+      <th scope="col">Content</th>
+      <th scope="col">Date</th>
+    </tr>
+  </thead>
+ {% for contact in contacts %}
+  <tbody>
+    <tr>
+      <th scope="row">{{contact.slno}}</th>
+      <td>{{contact.name}}</td>
+      <td>{{contact.email}}</td>
+      <td>{{contact.number}}</td>
+      <td>{{contact.sub}}</td>
+      <td>{{contact.message}}</td>
+      <td>{{contact.date}}</td>
+    </tr>
+  </tbody>
+  {% endfor%}
+</table>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+  </body>
+</html>
+   
